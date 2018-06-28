@@ -86,8 +86,13 @@ var setStateResults = function(state)
 
   var stateOverallWinner = stateInfoTable.children[1].children[2].children[1];
 
-  stateOverallWinner.innerText = stateWinner.name;
+  stateOverallWinner.innerText = null;
 
+  if(ralph.electionResults[state] !== felix.electionResults[state]){
+  stateOverallWinner.innerText = stateWinner.name;
+}else {
+  stateOverallWinner.innerText = "DRAW"
+}
 };
 
 var setOverallWinner = function()
